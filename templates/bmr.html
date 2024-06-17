@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Analysis</title>
+
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://kit.fontawesome.com/b77652ace9.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <div class = "container-fluid">
+
+        <nav  id = "main_navbar" class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+
+              <a class="navbar-brand" href="{{ url_for('home') }}">
+                <img src="static/images/logo3.png" alt="Logo"  height="26" class="d-inline-block align-text-top">
+                Face Analysis
+              </a>
+          
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('upload') }}">Upload</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ url_for('login') }}">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('bmr') }}">BMR</a>
+                  </li>
+                  
+                </ul>
+                
+              </div>
+            </div>
+          </nav>
+
+          <div class="container-fluid" style="margin-top:20px;"> 
+
+              <div class="card text-center col-lg-5 m-auto">
+                <div class="card-header">
+                  BMR calculator
+                </div>
+                <div class="card-body">
+                  <!-- <h5 class="card-title">Special title treatment</h5> -->
+                  <p class="card-text">Enter your information here:</p>
+
+                  <form method="post">
+
+                    <div class="form-group input-group mb-1">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="fa-solid fa-weight-scale"></i></span>
+                          <!-- <span class="fa-solid fa-dumbbell input-group-text"></span> -->
+                          
+                       </div>
+                      <input name="weight" class="form-control" placeholder="weight (kg)" type="text">
+                  </div> <!-- form-group// weight kg-->
+
+                  <div class="form-group input-group mb-1">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fa-solid fa-person-arrow-up-from-line"></i> </span>
+                       </div>
+                      <input name="height" class="form-control" placeholder="height (cm)" type="text">
+                  </div> <!-- form-group// height cm-->
+                  
+                  <div class="form-group input-group mb-1">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="fa-solid fa-hourglass-half"></i></span>
+                       </div>
+                      <input name="age" class="form-control" placeholder="age (years)" type="text" >
+                  </div> <!-- form-group//age yers -->
+
+                  <div class="form-group input-group mb-1">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text"> <i class="fa-solid fa-venus-mars"></i></span>
+                      </div>
+
+                     
+                      <input name="gender" class="form-control" placeholder="gender (female/male)" type="text">
+                  </div> <!-- form-group//gender -->
+
+
+
+                  <button type="submit" class="btn btn-primary">calculate</button>
+
+                  </form>
+                  
+                </div>
+                <div class="card-footer text-muted">
+                      <h3> Your bmr is: {{bmr_result}} </h3>
+                </div>
+              </div>
+            
+
+
+          </div>
+
+            
+
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="static/js/bootstrap.js"></script>
+</body>
+</html>

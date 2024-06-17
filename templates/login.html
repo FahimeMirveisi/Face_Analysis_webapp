@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Analysis</title>
+
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+</head>
+<body>
+
+    <div class = "container-fluid">
+
+        <nav  id = "main_navbar" class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+
+              <a class="navbar-brand" href="{{ url_for('home') }}">
+                <img src="static/images/logo3.png" alt="Logo"  height="26" class="d-inline-block align-text-top">
+                Face Analysis
+              </a>
+          
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('upload') }}">Upload</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('login') }}">Login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{{ url_for('bmr') }}">BMR</a>
+                  </li>
+                  
+                </ul>
+                
+              </div>
+            </div>
+          </nav>
+
+
+          <div class="container mt-4"">
+
+            <div class="col-lg-5 m-auto">
+
+                <div class="card text-center">
+                    <div class="card-header">
+                      <ul class="nav nav-pills card-header-pills">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="{{ url_for('login') }}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                        </li>
+                        
+                      </ul>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Login</h5>
+                      <p class="card-text">Have an account?</p>
+                      <form method="post">
+                        
+                        <div class="form-group input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                             </div>
+                            <input name="email" class="form-control" placeholder="Email address" type="email" aria-describedby="emailHelp">
+                        </div> <!-- form-group//email -->
+    
+    
+                        <div class="form-group input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                            </div>
+                            <input class="form-control" placeholder="password" type="password" name="password">
+                        </div> <!-- form-group// password-->
+
+                        <!-- 2 column grid layout -->
+                        <div class="row mb-4">
+                            <div class="col-md-6 d-flex justify-content-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-3 mb-md-0">
+                                <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
+                                <label class="form-check-label" for="loginCheck"> Remember me </label>
+                            </div>
+                            </div>
+                    
+                        </div>
+                    
+                        <button type="submit" class="btn btn-primary">sign in</button>
+                      </form>
+                      <!-- <a href="#" class="btn btn-primary">submit</a> -->
+                    </div>
+                  </div> <!-- my register login-->
+
+            </div>
+
+ 
+            </div> 
+            
+
+          <div class="container-fluid" style="margin-top:20px;"> 
+
+          </div>
+      
+
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="static/js/bootstrap.js"></script>
+</body>
+</html>
